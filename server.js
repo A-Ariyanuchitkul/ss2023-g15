@@ -221,6 +221,18 @@ app.delete('/users/:userId/friends/:friendId', async (req, res) => {
     }
 });
 
+// Get a user
+app.get('/users/:userId', async (req, res) => {
+    const { userId } = req.params;
+    try {
+        const user = await User.findByPk(userId);
+        res.json(user);
+    } catch (error) {
+        console.error('Error retrieving user: ', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 //Update User balance
 
 app.put('/users/:userId', async (req, res) => {
