@@ -11,9 +11,9 @@ const app = express();
 app.use(bodyParser.json());
 
 const DATABASE_NAME = "test_transaction";
-const USERNAME = "root";
-const PASSWORD = "";
-const PORT = 3000;
+const USERNAME = "admin";
+const PASSWORD = "IHateSoftwareStudio";
+const PORT = 3306;
 
 const CLIENT_ID = '475648335583-6hcec2ms988sstc52ahn6ol3ega0j6rg.apps.googleusercontent.com';
 const CLIENT_SECRET = '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';
@@ -30,7 +30,7 @@ const isValidEmail = email => EMAIL_FORMAT.test(email)
 
 // Database connection
 const sequelize = new Sequelize(DATABASE_NAME, USERNAME, PASSWORD, {
-    host: 'localhost',
+    host: 'db-demo3.cjqatcvujpry.ap-southeast-2.rds.amazonaws.com',
     dialect: 'mysql',
 });
 
