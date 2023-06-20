@@ -74,7 +74,7 @@ const Friendship = sequelize.define('Friendship', {});
 User.hasMany(Transaction);
 Transaction.belongsTo(User);
 User.belongsToMany(User, { through: Friendship, as: 'friends' });
-/*
+
 // Initialize Passport.js middleware
 app.use(session({
     secret: "AIzaSyCT0AxtRMaEDeZORLZnPAa29LpKBVEuAyU"
@@ -122,7 +122,7 @@ passport.deserializeUser(async (email, done) => {
         done(error);
     }
 });
-*/
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
 // Sync the models with the database
